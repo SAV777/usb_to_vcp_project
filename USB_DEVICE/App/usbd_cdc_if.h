@@ -51,7 +51,18 @@
 #define APP_RX_DATA_SIZE  512
 #define APP_TX_DATA_SIZE  512
 /* USER CODE BEGIN EXPORTED_DEFINES */
+#define MAX_COMMAND 10
 
+ typedef struct
+ {
+ 	int pos_receive;
+ 	int pos_parse;
+ 	uint8_t is_data_receive;
+ 	uint8_t data_buffer[MAX_COMMAND][APP_RX_DATA_SIZE];
+ 	uint8_t data_len[MAX_COMMAND];
+ }S_RX_BUFFER;
+
+ extern S_RX_BUFFER s_rx_buffer;
 /* USER CODE END EXPORTED_DEFINES */
 
 /**
